@@ -1,0 +1,20 @@
+
+.selected{
+    background: #d8f5ff}
+.btn {
+    width: 70px; 
+}
+::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+   background-color: #5783c7}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background{
+  background-color: #5783c7 }
+
+.example-full-width{
+    width: 400px;
+    margin-left: 5px;
+
+}
+.swal2-cancel{
+    background-color: red;
+}

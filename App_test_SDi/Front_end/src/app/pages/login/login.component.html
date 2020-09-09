@@ -1,0 +1,53 @@
+
+<!-- Page content -->
+<div class="container mt--8 pb-5 cd">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+      <div class="card bg-secondary shadow border-0 cd1">
+        <div class="card-header bg-transparent pb-5">
+         <h2 style="text-align: center;">Welcome To test app</h2>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+    
+          <form [formGroup]="LoginForm" role="form" novalidate >
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <input formControlName="email" class="form-control" placeholder="Email" type="email" required>
+          </div>
+          <ng-container *ngFor="let validation of validation_messages.email">
+            <div class="error-message" *ngIf="LoginForm.get('email').hasError(validation.type) && (LoginForm.get('email').dirty || LoginForm.get('email').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input  formControlName="password" class="form-control" placeholder="Password" type="password" required>
+              </div>
+              <ng-container *ngFor="let validation of validation_messages.password">
+                <div class="error-message" *ngIf="LoginForm.get('password').hasError(validation.type) && (LoginForm.get('password').dirty || LoginForm.get('password').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
+            <div class="error-message" *ngIf="errorMessage">
+              {{errorMessage}}
+            </div>
+            <div class="text-center">
+              <button type="button"  (click)="login()" class="btn btn-primary my-4">Connexion</button>
+              <button type="button"  (click)="LoginForm.reset()"class="btn btn-primary my-4">Annuler</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
